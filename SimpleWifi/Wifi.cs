@@ -29,11 +29,11 @@ namespace SimpleWifi
 			foreach (var inte in _client.Interfaces)
 				inte.WlanNotification += inte_WlanNotification;
 		}
-		
-		/// <summary>
-		/// Returns a list over all available access points
-		/// </summary>
-		public List<AccessPoint> GetAccessPoints()
+        public WlanClient Client { get { return _client; } }
+        /// <summary>
+        /// Returns a list over all available access points
+        /// </summary>
+        public List<AccessPoint> GetAccessPoints()
 		{
             List<AccessPoint> accessPoints = new List<AccessPoint>();
             if (_client.NoWifiAvailable)
